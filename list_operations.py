@@ -11,6 +11,14 @@ class double_linked_list:
         self.head = None
         self.tail = None
         self.size = 0
+
+    1>2>3>4>5
+
+    5>4>3>2>1
+
+
+   
+        
     def append(self,data):
         if  self.head is None:
             self.head = node(data)
@@ -79,6 +87,7 @@ class circular_list:
             count = count +1 
             
         return list 
+    
 
     def append(self,data):
         if self.head is None:
@@ -158,12 +167,16 @@ class LinkedList:
             print(curr.data,'-->',curr.next.data)
 
 l1 = double_linked_list()
-l1.append(22)
-l1.append(33)
-l1.append(44)
-l1.append(55)
-l1.delete(22)
-#l1.display()
+l1.append(1)
+l1.append(2)
+l1.append(3)
+l1.append(4)
+l1.append(5)
+#l1.delete(22)
+l1.display()
+
+
+l1.display()
 l = circular_list()
 l.append(11)
 l.append(22)
