@@ -1,0 +1,18 @@
+
+List Operations
+This repository contains Python implementations of various linked list data structures and operations, including:
+
+Doubly Linked List (double_linked_list)
+Circular Linked List (circular_list)
+Singly Linked List (LinkedList)
+Features
+Append Elements: Add new nodes to the end of the list.
+Rotate Circular List: Rotate elements in a circular linked list by a given position.
+Conversion from List: Convert a Python list to a circular linked list.
+Usage
+Requirements
+Python 3.x
+numpy (optional, but imported in the file)
+Example Output
+License
+This project is licensed under the MIT License.
