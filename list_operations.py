@@ -58,6 +58,7 @@ class double_linked_list:
 class circular_list:
     def __init__(self):
         self.head = None
+        self.tail = None
     def list_to_node(self,list):
         for i in list:
             self.append(i)
@@ -82,43 +83,51 @@ class circular_list:
     def append(self,data):
         if self.head is None:
             self.head= node(data)
+            self.head.next = self.head
         else:
-            tail = node(data)
+            self.tail = node(data)
             curr = self.head
-            while curr.next != self.head and curr.next is not None:
+            while curr.next != self.head:
                 curr = curr.next 
-            curr.next = tail
+            curr.next = self.tail
 
-            tail.next = self.head 
-            print('<><><>',tail.next.data)
+            self.tail.next = self.head 
+            #print('<><><>',self.tail.next.data)
 
 
         return 
     
     def delete(self,val):
-        curr = self.head 
-        if curr.data == val and curr.next is None:
+        
+        if self.head is None:
+            print('empty LIST to delete Node')
+
+            return
+        elif self.head.next == self.head and self.head.data == val:
             self.head = None
             return
-        elif curr.data == val and  curr.next is not None:
-            self.head = self.head.next
-
-            #print(self.head.data)
-            return
         else:
-            while curr.next != self.head:
-                #print(curr.data)
-                if curr.data == val:
-                    print(curr.data)
-                    temp.next = curr.next 
-
-                temp = curr
+            cnt =0
+            curr = self.head
+            while curr.data != val:
+                prev = curr
                 curr = curr.next
-            if curr.data == val:
-                print(curr.data)
-                temp.next = curr.next 
+                
+            if curr.next == self.head:
+                prev.next = self.head
+                self.tail.next = self.head 
+            elif curr == self.head:
+                self.head = self.head.next
+                self.tail.next = self.head 
+            elif curr.next !=self.head:
+                prev.next = curr.next 
 
-            return 
+
+
+
+
+
+
         
     def display(self):
         curr = self.head
@@ -156,13 +165,12 @@ l1.append(55)
 l1.delete(22)
 #l1.display()
 l = circular_list()
+l.append(11)
 l.append(22)
 l.append(33)
 l.append(44)
 l.display()
-l.delete(22)
-l.display()
-l.append(45)
+l.delete(33)
 l.display()
 
 l3 = [22,33,44,55,66]
