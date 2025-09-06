@@ -75,6 +75,4 @@ l.enqueue(20)
 l.enqueue(30)
 l.enqueue(40)
 l.dequeue()
-
-
 l.display()
