@@ -41,6 +41,7 @@ class circular_queue:
         print(curr.data, '-->',curr.next.data)
 
 
+
 class queue:
     def __init__(self):
         self.head = None 

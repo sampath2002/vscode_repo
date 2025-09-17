@@ -51,6 +51,7 @@ class tree:
         if node.left:
             self.print_tree(node.left, level + 1)
 
+ 
 
 l = tree()
 l.append(100)

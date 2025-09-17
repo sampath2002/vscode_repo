@@ -123,6 +123,7 @@ class circular_list:
     def display(self):
         curr = self.head
         print(self.head.data)
+        #print('}{}{}{}}',self.head.next.data)
         while curr.next != self.head:
             print(curr.data, end='-->')
             curr = curr.next
@@ -146,14 +147,15 @@ class LinkedList:
                 print(curr.data,end='-->')
                 curr = curr.next 
             curr.next = tail
+            print('}{}{}',self.head.next)
             print(curr.data,'-->',curr.next.data)
 
-l1 = double_linked_list()
+l1 = LinkedList()
 l1.append(22)
 l1.append(33)
 l1.append(44)
 l1.append(55)
-l1.delete(22)
+#l1.delete(22)
 #l1.display()
 l = circular_list()
 l.append(22)
